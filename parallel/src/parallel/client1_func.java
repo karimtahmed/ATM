@@ -165,7 +165,7 @@ public class client1_func extends javax.swing.JFrame {
             input.setText(" ");
          }
     }//GEN-LAST:event_withdrawActionPerformed
-
+//123kemo ahbl
     private void checkbalanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbalanceActionPerformed
        screen.setText("Balance : "+balance);
        

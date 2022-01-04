@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package parallel;
 
 import java.io.BufferedReader;
@@ -10,17 +5,14 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import static java.lang.Integer.parseInt;
 import java.net.ServerSocket;
 import java.net.Socket;
-import javax.swing.JFrame;
-
-/**
- *
- * @author karem
- */
 public class server extends javax.swing.JFrame {
 
-    
+    /**
+     * Creates new form server1
+     */
     public server() {
         initComponents();
     }
@@ -34,119 +26,30 @@ public class server extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jInternalFrame1 = new javax.swing.JInternalFrame();
-        jFrame1 = new javax.swing.JFrame();
-        jFrame2 = new javax.swing.JFrame();
-        jFrame3 = new javax.swing.JFrame();
-        jFrame4 = new javax.swing.JFrame();
-        jFrame5 = new javax.swing.JFrame();
-        jFileChooser1 = new javax.swing.JFileChooser();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jLabel4 = new javax.swing.JTextArea();
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        jInternalFrame1.setVisible(true);
-
-        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
-        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
-        jInternalFrame1Layout.setHorizontalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jInternalFrame1Layout.setVerticalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
-        jFrame1.getContentPane().setLayout(jFrame1Layout);
-        jFrame1Layout.setHorizontalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jFrame1Layout.setVerticalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jFrame2Layout = new javax.swing.GroupLayout(jFrame2.getContentPane());
-        jFrame2.getContentPane().setLayout(jFrame2Layout);
-        jFrame2Layout.setHorizontalGroup(
-            jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jFrame2Layout.setVerticalGroup(
-            jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jFrame3Layout = new javax.swing.GroupLayout(jFrame3.getContentPane());
-        jFrame3.getContentPane().setLayout(jFrame3Layout);
-        jFrame3Layout.setHorizontalGroup(
-            jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jFrame3Layout.setVerticalGroup(
-            jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jFrame4Layout = new javax.swing.GroupLayout(jFrame4.getContentPane());
-        jFrame4.getContentPane().setLayout(jFrame4Layout);
-        jFrame4Layout.setHorizontalGroup(
-            jFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jFrame4Layout.setVerticalGroup(
-            jFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jFrame5Layout = new javax.swing.GroupLayout(jFrame5.getContentPane());
-        jFrame5.getContentPane().setLayout(jFrame5Layout);
-        jFrame5Layout.setHorizontalGroup(
-            jFrame5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jFrame5Layout.setVerticalGroup(
-            jFrame5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("server");
-        setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel4.setColumns(20);
-        jLabel4.setRows(5);
-        jScrollPane1.setViewportView(jLabel4);
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -179,83 +82,238 @@ public class server extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
-        
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new server().setVisible(true);
             }
         });
-              ServerSocket s = new ServerSocket(9999); 
+
+        int balance1 = 5000;
+        int balance2 = 5000;
+        int balance3 = 5000;
+              //create a serverSocket object that handles the port number for the application InputStreamReader
+              //any port number would do fine as long as it&#039;s used same port number at the clientServer side 
+              ServerSocket s = new ServerSocket(9991); 
               Socket ss = s.accept(); //to accept the connection between server &amp; client
-              jLabel4.append(" Connected: \n");
-//              ServerSocket s2 = new ServerSocket(9992); 
-//              Socket ss2 = s2.accept();
-//              System.out.println("Connected client2");
-//              ServerSocket s3 = new ServerSocket(9993); 
-//              Socket ss3 = s3.accept();
-//              System.out.println("Connected client3");
+              jTextArea1.append("Connected client1\n");
+              ServerSocket s2 = new ServerSocket(9992); 
+              Socket ss2 = s2.accept();
+              jTextArea1.append("Connected client2\n");
+              ServerSocket s3 = new ServerSocket(9993); 
+              Socket ss3 = s3.accept();
+              jTextArea1.append("Connected client3\n");
               //while loop is being used to keep connection alive between server &amp; client //TCP connection orianted
               DataInputStream in = new DataInputStream(ss.getInputStream()); 
-//              DataInputStream in2 = new DataInputStream(ss2.getInputStream()); 
-//              DataInputStream in3 = new DataInputStream(ss3.getInputStream()); 
+              DataInputStream in2 = new DataInputStream(ss2.getInputStream()); 
+              DataInputStream in3 = new DataInputStream(ss3.getInputStream()); 
               DataOutputStream outToServer = new DataOutputStream(ss.getOutputStream());
-//              DataOutputStream outToServer2 = new DataOutputStream(ss2.getOutputStream());
-//              DataOutputStream outToServer3 = new DataOutputStream(ss3.getOutputStream());
+              DataOutputStream outToServer2 = new DataOutputStream(ss2.getOutputStream());
+              DataOutputStream outToServer3 = new DataOutputStream(ss3.getOutputStream());
               //buffer object is used to hold the data output from the client side 
               
               while(true) { 
                   String username = in.readUTF(); 
                   String password = in.readUTF();    
-                 
-                  jLabel4.append(" client: "+username+"\n");
-                  jLabel4.append(" client: "+password+"\n");
+                  jTextArea1.append("client1:" + username+"\n");
+                  jTextArea1.append("client1:" + password+"\n");
                   //
                   if ("karim".equals(username) && "2018".equals(password) )
                   {
                     outToServer.writeUTF("Login client1");
-                  }
-                  
-                  //
-                 
-                  else if ("joya".equals(username) && "2019".equals(password) )
-                  {
-                    outToServer.writeUTF("Login client2");
-                  }
-                 
-                  //
-                  
-                 else if ("remo".equals(username) && "2020".equals(password) )
-                  {
-                    outToServer.writeUTF("Login client3");
+                                        String choice1 = in.readUTF();
+                     int choice = parseInt(choice1);
+                    
+                     switch (choice) {
+                case 1:
+                     outToServer.writeUTF("1");
+                    String withdraw1 = in.readUTF();
+                    int withdraw = parseInt(withdraw1);
+                    jTextArea1.append("client1:" + withdraw+"\n");
+                    if( balance1 > withdraw && withdraw<7000)
+                    {
+                        //remove the withdrawl amount from the total balance
+                        balance1 -= withdraw ;
+                        outToServer.writeUTF("Please collect your money");
+                        
+                    }
+                    else
+                    {
+                        //show custom error message
+                        outToServer.writeUTF("Insufficient Balance");
+                        
+                    }    
+                    break;
+                case 2:
+                     outToServer.writeUTF("2");
+                    String deposit1 = in.readUTF();
+                    int deposit = parseInt(deposit1);
+                    jTextArea1.append("client1:" + deposit+"\n");                
+                        //remove the withdrawl amount from the total balance
+                        balance1 += deposit;
+                        outToServer.writeUTF("Your Money has been successfully depsited");
+    
+                    break;
+                case 4:
+                     outToServer.writeUTF("4");
+                    String accn = in.readUTF();
+                    String value = in.readUTF();
+                    int x=parseInt(value);
+                    if(("2".equals(accn)) && x<=balance1 ){
+                        balance1=balance1-x;
+                        balance2=balance2+x;
+                        outToServer.writeUTF("your balance have became "+balance1);
+                        jTextArea1.append("client 2 balance have became "+balance2+"\n");
+                        
+                    }
+                    else if(("3".equals(accn))&& x<=balance1){
+                        balance1=balance1-x;
+                        balance3=balance3+x;
+                        outToServer.writeUTF("your balance have became "+balance1);
+                        jTextArea1.append("client 3 balance have became"+balance3+"\n");
+                        
+
+                    }
+                    else if(x>balance1){
+                        outToServer.writeUTF("your balance is unsufficient ");
+                    }
+                    outToServer.writeUTF("transmission ended");
+                        //remove the withdrawl amount from the total balance
+    
+                    break;
+                
+  
+              }
                   }
                   else
                   {
-                      outToServer.writeUTF("Login failed");
+                      outToServer.writeUTF("Login client1 failed");
                   }
                   //
                   if (username.equalsIgnoreCase("exist"))
                   {
                       break;
                   }
+                  String username2 = in2.readUTF(); 
+                  String password2 = in2.readUTF();
+                  jTextArea1.append("client2:" + username2+"\n");
+                  jTextArea1.append("client2:" + password2+"\n");
+                  if ("joya".equals(username2) && "2019".equals(password2) )
+                  {
+                    outToServer2.writeUTF("Login client2");
+                    
+                                         String choice2 = in2.readUTF();
+                   // System.out.println("client1:" + choice1);
+                     int choice3 = parseInt(choice2);
+                    
+                     switch (choice3) {
+                case 1:
+                     outToServer2.writeUTF("1");
+                    String withdraw1 = in2.readUTF();
+                    int withdraw = parseInt(withdraw1);
+                    jTextArea1.append("client2:" + withdraw+"\n");
+                    if( balance2 > withdraw && withdraw<7000)
+                    {
+                        //remove the withdrawl amount from the total balance
+                        balance2 -= withdraw ;
+                        outToServer2.writeUTF("Please collect your money");
+                        
+                    }
+                    else
+                    {
+                        //show custom error message
+                        outToServer2.writeUTF("Insufficient Balance");
+                        
+                    }    
+                    break;
+                case 2:
+                     outToServer2.writeUTF("2");
+                    String deposit1 = in2.readUTF();
+                    int deposit = parseInt(deposit1);
+                    jTextArea1.append("client2:" + deposit+"\n");                
+                        //remove the withdrawl amount from the total balance
+                        balance2 += deposit;
+                        outToServer2.writeUTF("Your Money has been successfully depsited");
+    
+                    break;
+              }
+           
+                  }
+                  else
+                  {
+                      outToServer2.writeUTF("Login client2 failed");
+                  }
+                  //
+                  if (username2.equalsIgnoreCase("exist"))
+                  {
+                      break;
+                  }
+                  String username3 = in3.readUTF(); 
+                  String password3 = in3.readUTF();
+                  jTextArea1.append("client3:" + username3+"\n");
+                  jTextArea1.append("client3:" + password3+"\n");
+                  if ("remo".equals(username3) && "2020".equals(password3) )
+                  {
+                    outToServer3.writeUTF("Login client3");
+                    
+                              String choice4 = in3.readUTF();
+                   // System.out.println("client1:" + choice1);
+                     int choice5 = parseInt(choice4);
+                    
+                     switch (choice5) {
+                case 1:
+                     outToServer3.writeUTF("1");
+                    String withdraw1 = in3.readUTF();
+                    int withdraw = parseInt(withdraw1);
+                    jTextArea1.append("client3:" + withdraw+"\n");
+                    if( balance3 > withdraw && withdraw <7000)
+                    {
+                        //remove the withdrawl amount from the total balance
+                        balance3 -= withdraw ;
+                        outToServer3.writeUTF("Please collect your money");
+                        
+                    }
+                    else
+                    {
+                        //show custom error message
+                        outToServer3.writeUTF("Insufficient Balance");
+                        
+                    }    
+                    break;
+                case 2:
+                     outToServer3.writeUTF("2");
+                    String deposit1 = in3.readUTF();
+                    int deposit = parseInt(deposit1);
+                    jTextArea1.append("client2:" + deposit+"\n");                
+                        //remove the withdrawl amount from the total balance
+                        balance3 += deposit;
+                        outToServer3.writeUTF("Your Money has been successfully depsited");
+    
+                    break;
+                     }
+                  }
+                  else
+                  {
+                      outToServer3.writeUTF("Login client3 failed");
+                  }
+                  //
+                  if (username3.equalsIgnoreCase("exist"))
+                  {
+                      break;
+                  }
+
+                  break;
               } 
               ss.close();
-//            ss2.close();
-//            ss3.close();
-
-             
+              ss2.close();
+              ss3.close();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JFileChooser jFileChooser1;
-    private javax.swing.JFrame jFrame1;
-    private javax.swing.JFrame jFrame2;
-    private javax.swing.JFrame jFrame3;
-    private javax.swing.JFrame jFrame4;
-    private javax.swing.JFrame jFrame5;
-    private javax.swing.JInternalFrame jInternalFrame1;
-    private static javax.swing.JTextArea jLabel4;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private static javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }

@@ -234,13 +234,13 @@ public class client1 extends javax.swing.JFrame {
 
     private void withdrawActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_withdrawActionPerformed
  
-//          screen1.setText("Enter money to be withdrawn:");
+          screen1.setText("Enter money to be withdrawn:");
 //          String sentencetoclient4 = withdraw1.readLine();
-//            try {            
-//            dout.writeUTF(input12.getText());
-//            } catch (IOException ex) {
-//            Logger.getLogger(client11.class.getName()).log(Level.SEVERE, null, ex);
-//        }
+            try {            
+            dout.writeUTF(input12.getText());
+            } catch (IOException ex) {
+            Logger.getLogger(client1.class.getName()).log(Level.SEVERE, null, ex);
+        }
 //          String sentencefromserver2 = din.readUTF();   
 //          screen1.setText("Server:" + sentencefromserver2);
           

@@ -70,7 +70,7 @@ public class client3 extends javax.swing.JFrame {
         jLabel10.setText("Check Balance");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("client 1");
+        setTitle("client 3");
 
         jLabel1.setText("Username:");
 
@@ -286,7 +286,7 @@ public class client3 extends javax.swing.JFrame {
             }
         });
         //create a socket object that holds network, &amp; port numbrt, network in this case is localhost as it&#039;s running on your local device
-        s = new Socket("localhost", 9991); //192.168.1.5
+        s = new Socket("localhost", 9993); //192.168.1.5
         //create DataOutputStream object to change the output data to form of streams with passing the socket object to
         dout = new DataOutputStream(s.getOutputStream());
         din = new DataInputStream(s.getInputStream()); 

@@ -217,7 +217,7 @@ public class client3 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    // login button 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
             dout.writeUTF(jTextField1.getText());
@@ -231,7 +231,7 @@ public class client3 extends javax.swing.JFrame {
         }
               
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    // Transaction Button  
     private void withdrawActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_withdrawActionPerformed
  
 //          screen1.setText("Enter money to be withdrawn:");
@@ -246,7 +246,7 @@ public class client3 extends javax.swing.JFrame {
           
           
     }//GEN-LAST:event_withdrawActionPerformed
-
+    // Deposit Button
     private void depositActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_depositActionPerformed
 
 //          screen1.setText("Enter money to be deposited:");
@@ -255,11 +255,11 @@ public class client3 extends javax.swing.JFrame {
 //          String sentencefromserver3 = in.readUTF(); 
 //          System.out.println("Server:" + sentencefromserver3);
     }//GEN-LAST:event_depositActionPerformed
-
+    
     private void checkbalanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbalanceActionPerformed
     
     }//GEN-LAST:event_checkbalanceActionPerformed
-
+    // Check Balance Button
     private void checkbalance1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbalance1ActionPerformed
 //       screen.setText("Balance : "+balance);
     }//GEN-LAST:event_checkbalance1ActionPerformed
@@ -285,9 +285,9 @@ public class client3 extends javax.swing.JFrame {
         input12.setVisible(false); 
             }
         });
-        //create a socket object that holds network, &amp; port numbrt, network in this case is localhost as it&#039;s running on your local device
-        s = new Socket("localhost", 9993); //192.168.1.5
-        //create DataOutputStream object to change the output data to form of streams with passing the socket object to
+            //create a socket object that holds network, &amp; port numbrt, network in this case is localhost as its running on your local device
+        s = new Socket("localhost", 9993);  // example if its another on computer 192.168.1.5
+            //create DataOutputStream object to change the output data to form of streams with passing the socket object 
         dout = new DataOutputStream(s.getOutputStream());
         din = new DataInputStream(s.getInputStream()); 
                 

@@ -94,42 +94,48 @@ public class server1 extends javax.swing.JFrame {
         int balance2 = 5000;
         int balance3 = 5000;
               //create a serverSocket object that handles the port number for the application InputStreamReader
-              //any port number would do fine as long as it&#039;s used same port number at the clientServer side 
+              //any port number would do fine as long as it used same port number at the clientServer side 
               ServerSocket s = new ServerSocket(9991); 
               Socket ss = s.accept(); //to accept the connection between server &amp; client
-              jTextArea1.append("Connected client1\n");
+              jTextArea1.append("Connected client1\n"); // GUI Msg Display To Verify The Sucessful connection
               ServerSocket s2 = new ServerSocket(9992); 
               Socket ss2 = s2.accept();
               jTextArea1.append("Connected client2\n");
               ServerSocket s3 = new ServerSocket(9993); 
               Socket ss3 = s3.accept();
               jTextArea1.append("Connected client3\n");
-              //while loop is being used to keep connection alive between server &amp; client //TCP connection orianted
+              
+              //buffer object is used to hold the data output from the client side
+              
               DataInputStream in = new DataInputStream(ss.getInputStream()); 
               DataInputStream in2 = new DataInputStream(ss2.getInputStream()); 
               DataInputStream in3 = new DataInputStream(ss3.getInputStream()); 
               DataOutputStream outToServer = new DataOutputStream(ss.getOutputStream());
               DataOutputStream outToServer2 = new DataOutputStream(ss2.getOutputStream());
               DataOutputStream outToServer3 = new DataOutputStream(ss3.getOutputStream());
-              //buffer object is used to hold the data output from the client side 
-              
+    
+            
+              //while loop is being used to keep connection alive between server client //TCP connection orianted
+
               while(true) { 
+                  //Getting Input From User through the Text Area ('jTextArea1)
                   String username = in.readUTF(); 
                   String password = in.readUTF();    
                   jTextArea1.append("client1:" + username+"\n");
                   jTextArea1.append("client1:" + password+"\n");
-                  //
+                  // Verification on the login credientials
                   if ("karim".equals(username) && "2018".equals(password) )
                   {
-                    outToServer.writeUTF("Login client1");
-                                        String choice1 = in.readUTF();
-                     int choice = parseInt(choice1);
+                    outToServer.writeUTF("Login client1"); // MSG Sent To The Server With Client1 Login Log
+                                        String choice1 = in.readUTF(); // Getting the User Choice and Putting a conditional 'Switch' on his choice
+                     int choice = parseInt(choice1); // Parsing The Value Of The Sting  
                     
                      switch (choice) {
+                         // Choice 1 The Withdraw
                 case 1:
-                     outToServer.writeUTF("1");
+                     outToServer.writeUTF("1"); // Value Sent To The Server
                     String withdraw1 = in.readUTF();
-                    int withdraw = parseInt(withdraw1);
+                    int withdraw = parseInt(withdraw1); // Parsing The WithDraw Value to Intger  
                     jTextArea1.append("client1:" + withdraw+"\n");
                     if( balance1 > withdraw && withdraw<7000)
                     {
@@ -140,34 +146,34 @@ public class server1 extends javax.swing.JFrame {
                     }
                     else
                     {
-                        //show custom error message
+                        //Show custom error message (Exception Handling)
                         outToServer.writeUTF("Insufficient Balance");
                         
                     }    
                     break;
-                case 2:
+                case 2: // Choice 2 Deposite 
                      outToServer.writeUTF("2");
                     String deposit1 = in.readUTF();
-                    int deposit = parseInt(deposit1);
+                    int deposit = parseInt(deposit1); // Parsing the Value to Intger
                     jTextArea1.append("client1:" + deposit+"\n");                
                         //remove the withdrawl amount from the total balance
                         balance1 += deposit;
                         outToServer.writeUTF("Your Money has been successfully depsited");
     
                     break;
-                case 4:
+                case 4: // Choice Transaction 
                      outToServer.writeUTF("4");
-                    String accn = in.readUTF();
+                    String accn = in.readUTF(); // Account number in string type (client number )
                     String value = in.readUTF();
-                    int x=parseInt(value);
-                    if(("2".equals(accn)) && x<=balance1 ){
+                    int x=parseInt(value);// parsing the value of the Value input 
+                    if(("2".equals(accn)) && x<=balance1 ){//client 1 choosed to transfer to account 2  (client 2)
                         balance1=balance1-x;
                         balance2=balance2+x;
                         outToServer.writeUTF("your balance have became "+balance1);
                         jTextArea1.append("client 2 balance have became "+balance2+"\n");
                         
                     }
-                    else if(("3".equals(accn))&& x<=balance1){
+                    else if(("3".equals(accn))&& x<=balance1){ //client 1 choosed to transfer to account 3 (client 3) 
                         balance1=balance1-x;
                         balance3=balance3+x;
                         outToServer.writeUTF("your balance have became "+balance1);
@@ -175,7 +181,8 @@ public class server1 extends javax.swing.JFrame {
                         
 
                     }
-                    else if(x>balance1){
+                    // if the Balance is not enough to transfer
+                    else if(x>balance1){ 
                         outToServer.writeUTF("your balance is unsufficient ");
                     }
                     outToServer.writeUTF("transmission ended");

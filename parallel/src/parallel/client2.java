@@ -108,6 +108,11 @@ public class client2 extends javax.swing.JFrame {
         jLabel7.setText("Deposit");
 
         transaction.setText("Transaction");
+        transaction.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                transactionActionPerformed(evt);
+            }
+        });
 
         jLabel9.setText("Transaction ");
 
@@ -217,7 +222,7 @@ public class client2 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    // login button 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
             dout.writeUTF(jTextField1.getText());
@@ -232,6 +237,7 @@ public class client2 extends javax.swing.JFrame {
               
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    // Withdraw Button
     private void withdrawActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_withdrawActionPerformed
  
 //          screen1.setText("Enter money to be withdrawn:");
@@ -246,7 +252,7 @@ public class client2 extends javax.swing.JFrame {
           
           
     }//GEN-LAST:event_withdrawActionPerformed
-
+    // Deposit Button 
     private void depositActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_depositActionPerformed
 
 //          screen1.setText("Enter money to be deposited:");
@@ -259,10 +265,14 @@ public class client2 extends javax.swing.JFrame {
     private void checkbalanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbalanceActionPerformed
     
     }//GEN-LAST:event_checkbalanceActionPerformed
-
+    // Check Balance Button
     private void checkbalance1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbalance1ActionPerformed
 //       screen.setText("Balance : "+balance);
     }//GEN-LAST:event_checkbalance1ActionPerformed
+    // Transaction button
+    private void transactionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transactionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_transactionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -285,13 +295,17 @@ public class client2 extends javax.swing.JFrame {
         input12.setVisible(false); 
             }
         });
-        //create a socket object that holds network, &amp; port numbrt, network in this case is localhost as it&#039;s running on your local device
-        s = new Socket("localhost", 9992); //192.168.1.5
-        //create DataOutputStream object to change the output data to form of streams with passing the socket object to
+            // Create A Socket Object That Holds Network Port Number Network In This Case Is Localhost As Its Running On Your Local Device
+            
+           s = new Socket("localhost", 9992); // example if its another on computer 192.168.1.5
+        
+            //  Create DataOutputStream Object To Change The Output Data To Form Of Streams With Passing The Socket Object
+            
         dout = new DataOutputStream(s.getOutputStream());
         din = new DataInputStream(s.getInputStream()); 
                 
-        //buffer object is used to hold the data output from the client side 
+        //Buffer Object Is Used To Hold The Data Output From The Client Side
+        
         while(true)
         {               
             String fromServer="";
